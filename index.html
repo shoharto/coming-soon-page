@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg-gradient {
+        background: linear-gradient(
+          45deg,
+          rgba(255, 87, 34, 0.9),
+          rgba(103, 58, 183, 0.9),
+          rgba(33, 150, 243, 0.9)
+        );
+        background-size: 300% 300%;
+        animation: gradientBG 6s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .notify-button:hover {
+        background: rgba(103, 58, 183, 1);
+        color: white;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient h-screen flex items-center justify-center text-white font-sans"
+  >
+    <div
+      class="bg-black bg-opacity-70 rounded-lg p-8 w-11/12 sm:w-3/4 lg:w-2/3 xl:w-1/2 text-center shadow-lg"
+    >
+      <!-- Logo -->
+      <div class="mb-6">
+        <img
+          src="https://via.placeholder.com/150"
+          alt="Logo"
+          class="w-24 h-24 mx-auto rounded-full border-4 border-white shadow-md"
+        />
+      </div>
+      <!-- Title -->
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">We're Coming Soon!</h1>
+      <!-- Description -->
+      <p class="text-lg sm:text-xl mb-6">
+        Our new website is under construction. Stay tuned for something amazing!
+      </p>
+      <!-- Random Quote -->
+      <blockquote
+        id="quote"
+        class="italic text-lg text-gray-300 mb-6"
+      ></blockquote>
+      <!-- Notify Button -->
+      <a
+        href="#"
+        class="notify-button inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 px-6 py-3 text-lg font-medium rounded-full transition-transform"
+      >
+        Notify Me
+      </a>
+    </div>
+
+    <script>
+      // Array of quotes
+      const quotes = [
+        "The future belongs to those who believe in the beauty of their dreams. – Eleanor Roosevelt",
+        "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+        "Great things are not done by impulse, but by a series of small things brought together. – Vincent Van Gogh",
+        "The only limit to our realization of tomorrow is our doubts of today. – Franklin D. Roosevelt",
+        "Dream big and dare to fail. – Norman Vaughan",
+      ];
+
+      // Function to display a random quote
+      function displayRandomQuote() {
+        const quoteElement = document.getElementById("quote");
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteElement.textContent = randomQuote;
+      }
+
+      // Call the function on page load
+      displayRandomQuote();
+    </script>
+  </body>
+</html>
